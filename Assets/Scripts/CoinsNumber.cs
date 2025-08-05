@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections.Generic;
 
 public class CoinsNumber : MonoBehaviour
 {
@@ -8,21 +7,35 @@ public class CoinsNumber : MonoBehaviour
     private int _coins = 0;
     [SerializeField]
     private UnityEvent<int> _onCoinsUpdated;
+    [SerializeField]
+    private UnityEvent _onPurchasedSucces;
+    [SerializeField]
+    private UnityEvent _onPurchasedFailure;
     public void AddCoins(int amount)
-
     {
         _coins += amount;
         _onCoinsUpdated?.Invoke(_coins);
-    }
 
-    public void SetCoin(int amount)
+    }
+    public void SetCoins(int amount)
     {
         _coins = amount;
         _onCoinsUpdated?.Invoke(_coins);
     }
-        public void SubstractCoins(int amount)
+    public void SubstractCoins(int amount)
     {
         _coins -= amount;
         _onCoinsUpdated?.Invoke(_coins);
+    }
+    public bool BuyObject(int cost)
+    {
+        if (_coins >= cost)
+        {
+            _onPurchasedSucces?.Invoke();
+            SubstractCoins(cost);
+            return true;
+        }
+        _onPurchasedFailure?.Invoke();
+        return false;
     }
 }

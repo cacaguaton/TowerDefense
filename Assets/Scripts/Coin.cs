@@ -1,60 +1,52 @@
-using UnityEngine;
 using System.Collections;
-using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class Coin : MonoBehaviour
 {
     [SerializeField]
-    private string _appearAnimationName = "CoinAppear";
+    private string _appeaAnimationName = "CoinAppear";
     [SerializeField]
-    private string _disapearAnimationName = "CoinDisappear";
+    private string _dissappesrAnimationName = "CoinDisappear";
     [SerializeField]
     private Animator _animator;
     [SerializeField]
-    private float _timeToDisapper = 3f;
+    private float _timeToDisappear;
     [SerializeField]
     private UnityEvent _onCoinCollected;
-    
     private Collider _collider;
 
-    private void Awake()
+    void Awake()
     {
-
         _collider = GetComponent<Collider>();
-
     }
-
-    private void OnEnable()
+    void OnEnable()
     {
+
         _collider.enabled = true;
-        StartCoroutine(AooearCoroutine());
+        StartCoroutine(AppearCoroutine());
     }
-
-    private void OnDisable()
+    void OnDisable()
     {
-
         StopAllCoroutines();
-
     }
     public void Collect()
     {
         StartCoroutine(DisappearCoroutine());
         _onCoinCollected?.Invoke();
     }
-
-    private IEnumerator AooearCoroutine()
+    private IEnumerator AppearCoroutine()
     {
-        _animator.Play(_appearAnimationName);
-        yield return new WaitForSeconds(_timeToDisapper);
+        _animator.Play(_appeaAnimationName);
+        yield return new WaitForSeconds(_timeToDisappear);
         StartCoroutine(DisappearCoroutine());
     }
     private IEnumerator DisappearCoroutine()
     {
         _collider.enabled = false;
-        _animator.Play(_disapearAnimationName);
+        _animator.Play(_dissappesrAnimationName);
         yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
         gameObject.SetActive(false);
+        
     }
-
 }

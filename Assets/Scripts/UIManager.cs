@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,12 +16,12 @@ public class UIManager : MonoBehaviour
             button.Play(_appearAnimationName);
         }
     }
-        public void HideButtons()
+    public void HideButtons()
     {
         foreach (Animator button in _buttonList)
         {
             button.Play(_disappearAnimationName);
         }
     }
- 
+
 }

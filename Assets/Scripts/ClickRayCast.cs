@@ -1,43 +1,38 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class ClickRayCast : MonoBehaviour
 {
-
     [SerializeField]
-    private float _raycastDistance = 100f;
+    private float _rayCastDistance = 100f;
     [SerializeField]
-    private LayerMask _raycastLayerMask;
+    private LayerMask _rayCastLayerMark;
     [SerializeField]
-    private string _coinTag = "Coin";
+    private string _coinsTag = "Coin";
     [SerializeField]
+    private UnityEvent<Transform> _onCoinPressed;
     private bool _isActive = false;
-    [SerializeField]
-    private UnityEvent <Transform> _onCoinPressed;
-
     public void SetActive(bool isActive)
     {
         _isActive = isActive;
     }
-
     private void Update()
     {
         if (!_isActive) return;
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, _raycastDistance, _raycastLayerMask))
+            if (Physics.Raycast(ray, out hit, _rayCastDistance, _rayCastLayerMark))
             {
-                if (hit.collider.CompareTag(_coinTag))
+                if (hit.collider.CompareTag(_coinsTag))
                 {
-                    PressCoin(hit.collider.GetComponent<Coin>());
+                    pressCoin(hit.collider.GetComponent<Coin>());
                 }
             }
         }
     }
-    private void PressCoin(Coin coin)
+    private void pressCoin(Coin coin)
     {
         coin.Collect();
         _onCoinPressed?.Invoke(coin.transform);

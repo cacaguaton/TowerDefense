@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4698235289076562767}
   - component: {fileID: 3221565902363735721}
-  - component: {fileID: 2495874160551251631}
+  - component: {fileID: 8422269477939302053}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -98,7 +98,7 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!114 &2495874160551251631
+--- !u!114 &8422269477939302053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5053,7 +5053,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.022943163, y: 0.022943163, z: 0.022943163}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 632921438649993955}
