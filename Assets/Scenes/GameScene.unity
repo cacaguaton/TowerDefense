@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f9a5b71c00bcf4d97bf2741f6d6755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnInterval: 8.31
-  _spawnRadius: 0.2
+  _spawnInterval: 17.71
+  _spawnRadius: 0.76
   _positionY: 0
   _InstantiateZombie:
     m_PersistentCalls:
@@ -585,15 +585,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3ca09cb6bd6f26d448a61e3d8669de1a, type: 2}
     - target: {fileID: -8679921383154817045, guid: ab8f44bb24a87174599194903e892aa9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.0635085
+      value: 14.393178
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab8f44bb24a87174599194903e892aa9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.0635085
+      value: 14.393178
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab8f44bb24a87174599194903e892aa9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.0635085
+      value: 14.393178
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab8f44bb24a87174599194903e892aa9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -770,6 +770,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ab8f44bb24a87174599194903e892aa9, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ab8f44bb24a87174599194903e892aa9, type: 3}
+      propertyPath: m_TagString
+      value: Tower
       objectReference: {fileID: 0}
     - target: {fileID: 989968377860086672, guid: ab8f44bb24a87174599194903e892aa9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1281,7 +1285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f9a5b71c00bcf4d97bf2741f6d6755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnInterval: 4.29
+  _spawnInterval: 8.84
   _spawnRadius: 0.2
   _positionY: 0
   _InstantiateZombie:
@@ -2158,7 +2162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e40a46c0c42c67f42b59f490ac68c3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 4960054245693371340, guid: 42abba9df320acb47843341ae8ddfce1, type: 3}
+  _prefab: {fileID: 8962486023970858653, guid: 96b9dbea955c16047be5c150a6dbdd9d, type: 3}
   _parent: {fileID: 843729017}
 --- !u!4 &946224172
 Transform:
@@ -2231,7 +2235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gunCost: 10
-  _gunPoolObject: {fileID: 1896002135}
+  _gunPoolObject: {fileID: 454849346}
   _coinsNumber: {fileID: 909430719}
   _OnGunPurchased:
     m_PersistentCalls:
@@ -2800,7 +2804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gunCost: 1
-  _gunPoolObject: {fileID: 454849346}
+  _gunPoolObject: {fileID: 1896002135}
   _coinsNumber: {fileID: 909430719}
   _OnGunPurchased:
     m_PersistentCalls:
@@ -3295,7 +3299,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42267859}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: PlayMusic
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3356,7 +3360,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1213213157}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: Play
         m_Mode: 5
@@ -3368,7 +3372,7 @@ MonoBehaviour:
           m_StringArgument: TowerAppear
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1213213158}
         m_TargetAssemblyTypeName: Health, Assembly-CSharp
         m_MethodName: InitializeHealth
         m_Mode: 1
@@ -4308,7 +4312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc2508e2cdbee3408880082dc9fb9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.2
+  _radius: 0.5
   _spawnRate: 3.08
   _positionY: 0
   _instantiateCoin:
